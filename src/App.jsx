@@ -977,8 +977,17 @@ function App() {
                   <p className="success-desc">
                     The OTP you entered is invalid. Please try again.
                   </p>
-                  <button className="modal-done-btn" onClick={closeModal}>
-                    Done
+                  <button
+                    type="button"
+                    className="modal-done-btn"
+                    onClick={() => {
+                      setFormSubmitted(false);
+                      setOtpCode('');
+                      setOtpError('');
+                      setShowOtpModal(true);
+                    }}
+                  >
+                    Try Again
                   </button>
                 </div>
               ) : (
